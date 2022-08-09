@@ -55,7 +55,8 @@ let array1 = [
     { nombre: 'Cesar Alexis', apellido: 'Atoche Paredes', genero: 'M', nacimiento: '1984-04-09', curso: 'JavaScript' },
     { nombre: 'Nicolle Valentina', apellido: 'Cuellar Montenegro', genero: 'F', nacimiento: '1997-07-04', curso: 'Python' },
     { nombre: 'Diofinis', apellido: 'Ballesteros Castro', genero: 'M', nacimiento: '1990-08-03', curso: 'Sql' },
-    { nombre: 'Juan Carlos', apellido: 'Perez pio', genero: 'M', nacimiento: '1995-07-15', curso: 'JavaScript' }
+    { nombre: 'Juan Carlos', apellido: 'Perez pio', genero: 'M', nacimiento: '1995-07-15', curso: 'JavaScript' },
+    
 
 ];
 let ind = 0;

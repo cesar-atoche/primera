@@ -65,11 +65,11 @@ function editarAlumno() {
         return false;
     }
     let indice = document.getElementById("indice").value;
-    array[indice].nombre = document.getElementById("edicion-nombre").value;
-    array[indice].apellido = document.getElementById("edicion-apellido").value;
+    array[indice].nombre = document.getElementById("edicion-nombre").value.toLowerCase();
+    array[indice].apellido = document.getElementById("edicion-apellido").value.toLowerCase();
     array[indice].genero = gen;
     array[indice].nacimiento = document.getElementById("edicion-nacimiento").value;
-    array[indice].curso = document.getElementById("edicion-curso").value;
+    array[indice].curso = document.getElementById("edicion-curso").value.toLowerCase();
     mostrar(array);
 }
 
@@ -125,7 +125,6 @@ function buscarAlumno() {
     const resultado = array.filter(arr => arr.nombre.includes(buscar.toLowerCase()));
     mostrar(resultado)
 }
-
 
 function filtrarAlumnos() {
     let arraynuevo = array.map((x) => x);
