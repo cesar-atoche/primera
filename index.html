@@ -8,11 +8,12 @@
     <title>Sistema de Alumnos - Atoche</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./css/interfaz.css" />
-    <script src="./js/java.js"></script>
-    <script src="./js/funciones.js"></script>
+    <!-- <script defer src="./js/base.js"></script>
+    <script defer src="./js/java.js"></script> -->
+    <script defer src="./js/app.js" type="module"></script>
 </head>
 
-<body class="p-3 m-0 border-0 bd-example" onload="alCargar()">
+<body class="p-3 m-0 border-0 bd-example">
 
     <!-- Example Code -->
 
@@ -31,6 +32,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Alumnos</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="alumnos.html">Notas</a>
+                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link disabled">Disabled</a>
@@ -47,7 +51,7 @@
 
                 <tr>
                     <td><select id="filtrar" class="form-select" aria-label="Default select example"
-                            onclick="filtrarAlumnos()">
+                            >
                             <option selected>Filtrar</option>
                             <option value="1">Nombre</option>
                             <option value="2">Apellido </option>
@@ -61,10 +65,8 @@
                     <td width="5%"></td>
                     <td>
                         <form class="d-flex" role="search">
-                            <input class="form-control me-1" id="buscar" type="search" placeholder="Buscar por nombre"
+                            <input class="form-control me-1" id="buscar" type="search" placeholder="Busca en nombres y apellidos"
                                 aria-label="Search">
-                            <input type="button" class="btn btn-outline-success" value="Buscar"
-                                onclick="buscarAlumno()"></input>
                         </form>
                     </td>
                     <td width="10%"></td>
@@ -131,8 +133,8 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Cerrar</button>
-                                        <input type="input" class="btn btn-primary" id="inputcito" value="Guardar"
-                                            data-bs-dismiss="modal" onclick="return agregarAlumno()"></input>
+                                        <input type="input" class="btn btn-primary" id="inputAgregar" value="Guardar"
+                                            data-bs-dismiss="modal"></input>
                                     </div>
                                 </div>
                             </div>
@@ -179,7 +181,8 @@
         <font size=1 color="736E7D">
             <p class="text-left font-italic"><i>* Sistema de alumnos permite: agregar, eliminar, editar, filtrar (nombre,
                     apellido,curso, genero), buscar por nombre.
-                     <br>  * El codigo se genera con las primeras letras de los nombres, apellidos, nacimiento, genero.</i>
+                     <br>  * El codigo se genera con las primeras letras de los nombres, apellidos, nacimiento, genero.
+                     <br> * Guarda en LocalStorage</i>
             </p>
         </font>
     </div>
@@ -236,7 +239,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     <input type="button" class="btn btn-primary" id="input-editar" value="Guardar"
-                        data-bs-dismiss="modal" onclick="return editarAlumno()"></input>
+                        data-bs-dismiss="modal"></input>
                 </div>
             </div>
         </div>

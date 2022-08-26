@@ -1,11 +1,12 @@
-class generadorCodigo {
-    constructor(id, nombre, apellido, genero, nacimiento, curso) {
+export class generadorCodigo {
+    constructor(id, nombre, apellido, genero, nacimiento, curso,...notas) {
         this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
+        this.nombre = nombre.toLowerCase();
+        this.apellido = apellido.toLowerCase();
         this.genero = genero;
         this.nacimiento = nacimiento;
-        this.curso = curso;
+        this.curso = curso.toLowerCase();
+        this.notas = notas;
     }
     obtienePrimerDigito(cadena) { //obtiene primer digito de cada palabra de cadena con espacios
         let arrayPalabra = cadena.split(" ");
@@ -42,21 +43,15 @@ class generadorCodigo {
         }
         return string;
     }
-
+    promedio() {
+            let promedio = ((parseInt(this.notas[0]) + parseInt(this.notas[1]) + parseInt(this.notas[2])) / 3).toFixed(2);
+            if (promedio === "NaN"){
+                promedio = 0;
+            }
+            return promedio;
+    }
 }
 
-var array = [];
-//agrego datos al index con un array
-let array1 = [
-    { nombre: 'Cesar Alexis', apellido: 'Atoche Paredes', genero: 'M', nacimiento: '1984-04-09', curso: 'JavaScript' },
-    { nombre: 'Nicolle Valentina', apellido: 'Cuellar Montenegro', genero: 'F', nacimiento: '1997-07-04', curso: 'Python' },
-    { nombre: 'Diofinis', apellido: 'Ballesteros Castro', genero: 'M', nacimiento: '1990-08-03', curso: 'Sql' },
-    { nombre: 'Juan Carlos', apellido: 'Perez pio', genero: 'M', nacimiento: '1995-07-15', curso: 'JavaScript' },
-    { nombre: 'Cesar Alexis', apellido: 'Atoche Paredes', genero: 'M', nacimiento: '1984-04-09', curso: 'JavaScript' },
-    { nombre: 'Nicolle Valentina', apellido: 'Cuellar Montenegro', genero: 'F', nacimiento: '1997-07-04', curso: 'Python' },
-    { nombre: 'Diofinis', apellido: 'Ballesteros Castro', genero: 'M', nacimiento: '1990-08-03', curso: 'Sql' },
-    { nombre: 'Juan Carlos', apellido: 'Perez pio', genero: 'M', nacimiento: '1995-07-15', curso: 'JavaScript' },
-    
 
-];
-let ind = 0;
+
+
